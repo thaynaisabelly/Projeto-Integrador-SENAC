@@ -12,7 +12,7 @@ body {
 .container__menu {
     display: flex;
     align-items: center;
-    background-color: #59005C;
+    background-color: #472693;
     padding: 1.5%;
 }
 
@@ -47,12 +47,12 @@ a {
     height: 50%;
     justify-content: space-between;
     align-items: center;
-    position: relative;
+    position: absolute; top: 31%;
 }
 .content::before {
     content: "";
     position: absolute;
-    background-color: #59005C;
+    background-color: #472693;
     width: 40%;
     height: 100%;
     border-top-left-radius: 15px;
