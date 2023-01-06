@@ -1,0 +1,34 @@
+.header__initial {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    width: 100%;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+}
+
+.menu_login {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--color-font);
+    cursor: pointer;
+}
+
+
+.menu_login:hover {
+    border-bottom: 1px solid white;
+}
+
+
+.logo__home{
+    width: 40rem;
+    padding-bottom: 0.5rem;
+}
+
+
