@@ -8,23 +8,23 @@ const closeModal = () => {
     document.getElementById('modal').classList.remove('active')
 }
 
-const getLocalStorage = () => JSON.parse(localStorage.getItem('db_client')) ?? []
-const setLocalStorage = (dbClient) => localStorage.setItem("db_client", JSON.stringify(dbClient))
+const getLocalStorage = () => JSON.parse(localStorage.getItem('db_client1')) ?? []
+const setLocalStorage = (dbClient) => localStorage.setItem("db_client1", JSON.stringify(dbClient))
 
 // Crud - Create Read Update Delete
 
 // Crud - DELETE
 const deleteClient = (index) => {
-    const dbClient = readClient()
-    dbClient.splice(index, 1)
-    setLocalStorage(dbClient)
+    const dbClient1 = readClient()
+    dbClient1.splice(index, 1)
+    setLocalStorage(dbClient1)
 }
 
 // Crud - UPDATE
 const updateClient = (index, client) => {
-    const dbClient = readClient()
-    dbClient[index] = client
-    setLocalStorage(dbClient)
+    const dbClient1 = readClient()
+    dbClient1[index] = client
+    setLocalStorage(dbClient1)
 }
 
 // Crud - READ
@@ -32,9 +32,9 @@ const readClient = () => getLocalStorage()
 
 // Crud - CREATE
 const createClient = (client) => {
-    const dbClient = getLocalStorage()
-    dbClient.push(client)
-    setLocalStorage(dbClient)
+    const dbClient1 = getLocalStorage()
+    dbClient1.push(client)
+    setLocalStorage(dbClient1)
 }
 
 const isValidFields = () => {
@@ -52,8 +52,6 @@ const saveClient = () => {
         const client = {
             name: document.getElementById('name').value,
             registration: document.getElementById('registration').value,
-            email: document.getElementById('email').value,
-            course: document.getElementById('course').value,
         }
         const index = document.getElementById('name').dataset.index
         if (index == 'new') {
@@ -73,11 +71,18 @@ const createRow = (client, index) => {
     const newRow = document.createElement('tr')
     newRow.innerHTML = `
         <td class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">${client.name}</td>
-        <td class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">${client.registration}</td>
-        <td class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">${client.email}</td>
-        <td class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">${client.course}</td>
+        
         <td class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
-            <button type="button" class="button green" id="edit-${index}">Editar</button>
+        <img src="client.registration" alt="">
+
+        <a class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800" href="" download="Arquivo">
+
+        ${client.registration}
+        
+        </a>
+        </td> 
+
+        <td class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
             <button type="button" class="button red" id="delete-${index}">Excluir</button>
         </td>
     `
@@ -90,16 +95,14 @@ const clearTable = () => {
 }
 
 const updateTable = () => {
-    const dbClient = readClient()
+    const dbClient1 = readClient()
     clearTable()
-    dbClient.forEach(createRow)
+    dbClient1.forEach(createRow)
 }
 
 const fillfields = (client) => {
     document.getElementById('name').value = client.name
     document.getElementById('registration').value = client.registration
-    document.getElementById('email').value = client.email
-    document.getElementById('course').value = client.course
     document.getElementById('name').dataset.index = client.index
 }
 
@@ -119,7 +122,7 @@ const editDelete = (event) => {
             editClient(index)
         } else {
             const client = readClient()[index]
-            const response = confirm(`Deseja realmente excluir o aluno: ${client.name}?`)
+            const response = confirm(`Pressione "Ok" se deseja excluir o documento anexado.`)
             if (response) {
                 deleteClient(index)
                 updateTable()
@@ -146,3 +149,4 @@ document.getElementById('save-form')
 
 document.querySelector('#tableClient>tbody')
     .addEventListener('click', editDelete)
+

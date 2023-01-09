@@ -14,8 +14,16 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" defer></script>
   <link rel="shortcut icon" href="img/Logo_QR/logoroxa.png" type="image/x-icon">
-  
-  <!-- popup -->
+
+  <!-- arquivos -->
+  <link rel="stylesheet" href="cssGeral/css1/adm/adm.css">
+  <link rel="stylesheet" href="cssGeral/css1/adm/button.css">
+  <link rel="stylesheet" href="cssGeral/css1/adm/modal.css">
+  <link rel="stylesheet" href="cssGeral/css1/adm/records.css">
+  <link rel="stylesheet" href="cssGeral/css1/popup/poupup.css">
+  <script src="jsGeral/js1/app.js" defer></script>
+  <script src="jsGeral/js1/arquivos.js" defer></script>
+  <!-- arquivos -->
 
   <link rel="stylesheet" href="cssGeral/css1/popup/poupup.css">
   <script defer src="jsGeral/js1/app.js"></script>
@@ -39,7 +47,7 @@
     <!-- Desktop sidebar -->
     <aside class="z-20 hidden w-64 overflow-y-auto bg-white dark:bg-gray-800 md:block flex-shrink-0">
       <div class="py-4 text-gray-500 dark:text-gray-400">
-        <a class="ml-6 text-lg font-bold text-gray-800 dark:text-gray-200" href="login.html">
+        <a class="ml-6 text-lg font-bold text-gray-800 dark:text-gray-200" href="#">
           <img style="width: 100px; display: inline-block;" src="img/Logo_QR/logodianoitecomlaranja.png" alt="">
         </a>
         <ul class="mt-6">
@@ -214,7 +222,8 @@
             </li>
             <!-- Notifications menu -->
             <li class="relative">
-              <button id="botaoPopup" class="relative align-middle rounded-md focus:outline-none focus:shadow-outline-purple botaoPopup"
+              <button id="botaoPopup"
+                class="relative align-middle rounded-md focus:outline-none focus:shadow-outline-purple botaoPopup"
                 @click="toggleNotificationsMenu" @keydown.escape="closeNotificationsMenu" aria-label="Notifications"
                 aria-haspopup="true">
                 <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
@@ -257,7 +266,7 @@
                       href="edicaoAluno.html">
                       <svg class="w-4 h-4 mr-3" aria-hidden="true" fill="none" stroke-linecap="round"
                         stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
-                        <path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>                        
+                        <path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
                       </svg>
                       <span>Perfil</span>
                     </a>
@@ -444,83 +453,62 @@
 
           <!-- ////////////////////////////// -->
           <!-- Anexar Arquivos -->
-          <div
-            class="relative min-h-screen flex items-center justify-center bg-black-50 py-12 px-4 sm:px-6 lg:px-8 bg-gray-500 bg-no-repeat bg-cover relative items-center  rounded-lg focus:outline-none focus:border-indigo-500"
-            >
-            <!-- style="background-image: url(https://acegif.com/wp-content/uploads/gifs/starfall-gif-46.gif); background-repeat: no-repeat; background-size: cover;" -->
-            <!-- style="background-image: url(https://images.unsplash.com/photo-1621243804936-775306a8f2e3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80);" -->
-            <!-- <div class="absolute bg-black opacity-60 inset-0 z-0"></div> -->
-            <div style="padding: 10%; width: auto; margin-top: 5%; margin-bottom: 5%; border-radius: 5%;" class="sm:max-w-lg w-full p-10 bg-white rounded-xl z-10 min-w-0 p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800">
-              <div class="text-center">
-                <h2 class="mt-5 text-3xl font-bold text-gray-900 mb-4 font-semibold text-gray-800 dark:text-gray-300">
-                  Arquivos
-                </h2>
-                <p class="mt-2 text-sm text-gray-400">Envie sua declaração de ausência abaixo</p>
-              </div>
-              <form class="mt-8 space-y-3" action="#" method="POST">
-                <div class="grid grid-cols-1 space-y-2">
-                  <label class="text-sm font-bold text-gray-500 tracking-wide">Titulo</label>
-                  <input
-                    class="text-base p-2 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500"
-                    type="" placeholder="Digite aqui...">
-                </div>
-                <div class="grid grid-cols-1 space-y-2">
-                  <label class="text-sm font-bold text-gray-500 tracking-wide">Anexar Documento</label>
-                  <div class="flex items-center justify-center w-full">
-                    <label class="flex flex-col rounded-lg border-4 border-dashed w-full h-60 p-10 group text-center">
-                      <div class="h-full w-full text-center flex flex-col items-center justify-center items-center  ">
-                        <!-- <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-blue-400 group-hover:text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
-                                  </svg> -->
-                        <div class="flex flex-auto max-h-48 w-2/5 mx-auto -mt-10">
-                          <img class="has-mask h-36 object-center border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500"
-                            src="https://img.freepik.com/free-vector/image-upload-concept-landing-page_52683-27130.jpg?size=338&ext=jpg"
-                            alt="freepik image">
-                        </div>
-                        <p class="pointer-none text-gray-500 "><span class="text-sm">Arraste e solte</span> arquivos aqui
-                          <br /> ou <a href="" id="" class="text-blue-600 hover:underline">escolha um arquivo</a> do seu
-                          computador!
-                        </p>
-                      </div>
-                      <input type="file" class="hidden">
-                    </label>
+          <div class="w-full overflow-hidden rounded-lg shadow-xs">
+            <div class="w-full overflow-x-auto">
+              <main>
+                <button type="button" class="button blue mobile" id="register">Enviar arquivo</button>
+                <table id="tableClient" class="records">
+                  <thead>
+                    <tr
+                      class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800"
+                      id="alunos1">
+                      <th class="px-4 py-3">Insira o arquivo de justificativa de ausência aqui<br>
+                      </th>
+                  </thead>
+                  <tbody>
+                  </tbody>
+                </table>
+
+                <div class="modal" id="modal">
+                  <div class="modal-content">
+                    <header class="modal-header">
+                      <h2>Envio de documentos</h2>
+                      <span class="modal-close" id="modalClose">&#10006;</span>
+                    </header>
+                    <form id="form" class="modal-form">
+                      <input id="name" type="text" data-index="new" class="modal-field" placeholder="Nome do aluno"
+                        required>
+                      <input id="registration" accept="image/*" type="file" class="modal-field" placeholder="Arquivo"
+                        required>
+                    </form>
+                    <footer class="modal-footer">
+                      <button class="button green" id="save-form">Salvar</button>
+                      <button class="button blue" id="cancel-form">Cancelar</button>
+                    </footer>
                   </div>
                 </div>
-                <p class="text-sm pointer-none text-gray-500">
-                  <span>Tipos: doc, pdf, imagens</span>
-                </p><br>
-                <div>
-                  <button type="submit"
-                    class="my-5 w-full flex justify-center bg-blue-500 text-gray-100 p-4  rounded-full tracking-wide
-                                  font-semibold  focus:outline-none focus:shadow-outline hover:bg-blue-600 shadow-lg cursor-pointer transition ease-in duration-300">
-                    Enviar
-                  </button>
-                </div>
-              </form>
+
+                <!-- ///////////////////////////// -->
+
+              </main>
             </div>
           </div>
-          <!-- ///////////////////////////// -->
 
-        </div>
-      </main>
-    </div>
-  </div>
+          <!-- //////////////////////////////////////////////////////////////// -->
 
-  <!-- //////////////////////////////////////////////////////////////// -->
+          <script>
 
-  <script>
+            function funcMenuResponsivo() {
+              let menuResponsivo = document.getElementById("menuHamburger");
 
-    function funcMenuResponsivo() {
-      let menuResponsivo = document.getElementById("menuHamburger");
+              if (menuResponsivo.className === "navbarMenu") {
+                menuResponsivo.className += " responsividade";
+              } else {
+                menuResponsivo.className = "navbarMenu";
+              }
+            }
 
-      if (menuResponsivo.className === "navbarMenu") {
-        menuResponsivo.className += " responsividade";
-      } else {
-        menuResponsivo.className = "navbarMenu";
-      }
-    }
-
-  </script>
+          </script>
 
 </body>
 
