@@ -3,6 +3,8 @@
 @import url(/cssGeral/Initial/main.css);
 @import url(/cssGeral/Initial/footer.css);
 @import url(/cssGeral/Initial/animation_initial.css);
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
 
 :root {
     --background-black: #000000;

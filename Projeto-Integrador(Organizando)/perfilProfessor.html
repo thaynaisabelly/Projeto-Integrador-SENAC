@@ -6,20 +6,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- <title>Windmill Dashboard</title> -->
-  <title>Perfil Professor</title>
+  <title>QR AQUi</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="cssGeral/css1/tailwind.output.css" />
   <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
   <script src="jsGeral/js1/init-alpine.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" defer></script>
-  <link rel="shortcut icon" href="img/Logo_QR/logoroxa.png" type="image/x-icon">
+  <link rel="shortcut icon" sizes="16x16" href="/assets/img/logo cortada.jpeg" type="image/x-icon">
   <script defer src="jsGeral/js1/professor.js"></script>
   <link rel="stylesheet" href="cssGeral/css1/adm/adm.css">
   <link rel="stylesheet" href="cssGeral/css1/adm/button.css">
   <link rel="stylesheet" href="cssGeral/css1/adm/modal.css">
   <link rel="stylesheet" href="cssGeral/css1/adm/records.css">
   <link rel="stylesheet" href="cssGeral/css1/filter.css">
+  <link rel="stylesheet" href="/cssGeral/semana/semana.css">
 
   <!-- popup -->
 
@@ -46,8 +47,8 @@
     <!-- Desktop sidebar -->
     <aside class="z-20 hidden w-64 overflow-y-auto bg-white dark:bg-gray-800 md:block flex-shrink-0">
       <div class="py-4 text-gray-500 dark:text-gray-400">
-        <a class="ml-6 text-lg font-bold text-gray-800 dark:text-gray-200" href="#">
-          <img style="width: 100px; display: inline-block;" src="img/Logo_QR/logodianoitecomlaranja.png" alt="">
+        <a class="ml-6 text-lg font-bold text-gray-800 dark:text-gray-200" href="/index.html">
+          <img style="width: 100px; display: inline-block;" src="/assets/img/LOGOBRANCO.PNG" alt="">
         </a>
         <ul class="mt-6">
           <li class="relative px-6 py-3">
@@ -401,26 +402,77 @@
                 </svg>
               </div>
               <div>
-                <p class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400">
+                <div class="cotainer__semana">
+                  <p class="text-sm font-medium text-gray-600 dark:text-gray-400 basis-4/5">
                   Conteúdo / Dia
+                  </p>
+                  <input type="checkbox" name="edicao" id="edicao__check">
+                  <button class="botao__semana" onclick="visivel()">
+                    <svg class="icon__semana" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50"
+                      viewBox="0,0,256,256" style="fill:#000000;">
+                      <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                        stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                        font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                        style="mix-blend-mode: normal">
+                        <g transform="scale(5.12,5.12)">
+                          <path
+                            d="M43.125,2c-1.24609,0 -2.48828,0.48828 -3.4375,1.4375l-0.8125,0.8125l6.875,6.875c-0.00391,0.00391 0.8125,-0.8125 0.8125,-0.8125c1.90234,-1.90234 1.89844,-4.97656 0,-6.875c-0.95312,-0.94922 -2.19141,-1.4375 -3.4375,-1.4375zM37.34375,6.03125c-0.22656,0.03125 -0.4375,0.14453 -0.59375,0.3125l-32.4375,32.46875c-0.12891,0.11719 -0.22656,0.26953 -0.28125,0.4375l-2,7.5c-0.08984,0.34375 0.01172,0.70703 0.26172,0.95703c0.25,0.25 0.61328,0.35156 0.95703,0.26172l7.5,-2c0.16797,-0.05469 0.32031,-0.15234 0.4375,-0.28125l32.46875,-32.4375c0.39844,-0.38672 0.40234,-1.02344 0.01563,-1.42187c-0.38672,-0.39844 -1.02344,-0.40234 -1.42187,-0.01562l-32.28125,32.28125l-4.0625,-4.0625l32.28125,-32.28125c0.30078,-0.28906 0.39063,-0.73828 0.22266,-1.12109c-0.16797,-0.38281 -0.55469,-0.62109 -0.97266,-0.59766c-0.03125,0 -0.0625,0 -0.09375,0z">
+                          </path>
+                        </g>
+                      </g>
+                    </svg>
+                  </button>
+                </div>
+                <p id="segunda__dia" class="text-lg font-semibold text-gray-700 dark:text-gray-200">
+                  Segunda-feira: 
                 </p>
-                <p class="text-lg font-semibold text-gray-700 dark:text-gray-200">
-                  Segunda-feira: ?????
+                <span id="dia1" class="ml-2 text-sm font-medium text-gray-600 dark:text-gray-400 basis-4/5">????</span>
+                <p id="terca__dia"class="text-lg font-semibold text-gray-700 dark:text-gray-200">
+                  Terça-feira: 
                 </p>
-                <p class="text-lg font-semibold text-gray-700 dark:text-gray-200">
-                  Terça-feira: ?????
+                <span id="dia2" class="ml-2 text-sm font-medium text-gray-600 dark:text-gray-400 basis-4/5">????</span>
+                <p id="quarta__dia" class="text-lg font-semibold text-gray-700 dark:text-gray-200">
+                  Quarta-feira: 
                 </p>
-                <p class="text-lg font-semibold text-gray-700 dark:text-gray-200">
-                  Quarta-feira: ?????
+                <span id="dia3" class="ml-2 text-sm font-medium text-gray-600 dark:text-gray-400 basis-4/5">????</span>
+                <p id="quinta__dia"class="text-lg font-semibold text-gray-700 dark:text-gray-200">
+                  Quinta-feira: 
                 </p>
-                <p class="text-lg font-semibold text-gray-700 dark:text-gray-200">
-                  Quinta-feira: ?????
+                <span id="dia4" class="ml-2 text-sm font-medium text-gray-600 dark:text-gray-400 basis-4/5">????</span>
+                <p id="sexta__dia" class="text-lg font-semibold text-gray-700 dark:text-gray-200">
+                  Sexta-feira: 
                 </p>
-                <p class="text-lg font-semibold text-gray-700 dark:text-gray-200">
-                  Sexta-feira: ?????
-                </p>
+                <span id="dia5" class="ml-2 text-sm font-medium text-gray-600 dark:text-gray-400 basis-4/5">????</span>
               </div>
             </div>
+            <section class="edicao__semana">
+              <div class="editar__semana">
+                <div class="container__segunda">
+                  <label for="segunda">Segunda:</label>
+                  <input type="text" maxlength="50" name="segunda" id="segunda" required>
+                </div>
+                <div class="container__terca">
+                  <label for="terca">Terça:</label>
+                  <input type="text" maxlength="50" name="terca" id="terca" required>
+                </div>
+                <div class="container__quarta">
+                  <label for="quarta">Quarta:</label>
+                  <input type="text" maxlength="50" name="quarta" id="quarta" required>
+                </div>
+                <div class="container__quinta">
+                  <label for="quinta">Quinta:</label>
+                  <input type="text" maxlength="50" name="quinta" id="quinta" required>
+                </div>
+                <div class="container__sexta">
+                  <label for="sexta">Sexta:</label>
+                  <input type="text" maxlength="50" name="sexta" id="sexta" required>
+                </div>
+                <div class="botao__enviar">
+                  <button onclick="atualizaoSemana()" type="button"  class="botao__semana__enviar">Enviar</button>
+                  <button onclick="invisivel()" class="botao__cancelar">cancelar</button>
+                </div>
+              </div>
+            </section>
 
           </div>
 
@@ -904,7 +956,7 @@
   </div>
 
   <!-- //////////////////////////////////////////////////////////////// -->
-
+  <script src="/jsGeral/js1/semana.js"></script>
   <script>
 
     function funcMenuResponsivo() {

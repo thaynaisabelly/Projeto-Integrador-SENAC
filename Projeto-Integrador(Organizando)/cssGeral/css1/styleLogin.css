@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -6,21 +8,19 @@
     overflow: hidden;
 }
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Varela Round', sans-serif;
 }
 
 .container__menu {
+    background-color: #472693;
     display: flex;
     align-items: center;
-    background-color: #59005C;
-    padding: 1.5%;
+   
 }
 
 .container__menu > a > img {
-    width: 30px;
-    height: 30px;
-    margin-right: 10px;
-    margin-left: 5px;
+    width: 150px;
+    margin: 20px 0 10px 30px;
 }
 
 .menu {
@@ -35,6 +35,7 @@ a {
 
 .container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -45,14 +46,14 @@ a {
     border-radius: 15px;
     width: 960px;
     height: 50%;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     position: relative;
 }
 .content::before {
     content: "";
     position: absolute;
-    background-color: #59005C;
+    background-color: #472693;
     width: 40%;
     height: 100%;
     border-top-left-radius: 15px;
@@ -62,18 +63,24 @@ a {
 .title {
     font-size: 28px;
     font-weight: bold;
-    text-transform: capitalize;
+    font-family: 'Varela Round', sans-serif;
+
+    
 }
 .title-primary {
     color: #fff;
 }
 .title-second {
-    color: #989e9d;
+    color: #472693;
+    font-family: 'Varela Round', sans-serif;
+
 }
 .description {
     font-size: 14px;
     font-weight: 300;
     line-height: 30px;
+    font-family: 'Varela Round', sans-serif;
+
 }
 .description-primary {
     color: #fff;
@@ -83,7 +90,6 @@ a {
 }
 .btn {
     border-radius: 15px;
-    text-transform: uppercase;
     color: #fff;
     font-size: 10px;
     padding: 10px 50px;
@@ -93,15 +99,18 @@ a {
     align-self: center;
     border: none;
     margin-top: 1rem;
+    font-family: 'Varela Round', sans-serif;
+    text-transform: uppercase;
 }
 .btn-primary {
     background-color: transparent;
     border: 1px solid #fff;
     transition: background-color .5s;
+    
 }
 .btn-primary:hover {
     background-color: #fff;
-    color: #58af9b;
+    color: #472693;
 }
 .btn-second {
     background-color: #9c9c9c;
@@ -109,9 +118,9 @@ a {
     transition: background-color .5s;
 }
 .btn-second:hover {
-    background-color: #fff;
-    border: 1px solid #58af9b;
-    color: #58af9b;
+    background-color: #472693;
+    border: 1px solid #472693;
+    color: #fff;
 }
 .first-content {
     display: flex;
@@ -155,7 +164,7 @@ a {
     height: 35px;
     line-height: 35px;
     text-align: center;
-    color: #95a5a6;
+    color: #5e5e5e;
 }
 .form {
     display: flex;
@@ -179,8 +188,9 @@ input:-webkit-autofill
     align-items: center;
     margin: 8px;
 }
+
 .icon-modify {
-    color: #7f8c8d;
+    color: #472693;
     padding: 0 5px;
 }
 
@@ -203,6 +213,8 @@ input:-webkit-autofill
     font-size: 14px;
     margin: 15px 0;
     text-align: center;
+    font-family: 'Varela Round', sans-serif;
+
 }
 .password::first-letter {
     text-transform: capitalize;
