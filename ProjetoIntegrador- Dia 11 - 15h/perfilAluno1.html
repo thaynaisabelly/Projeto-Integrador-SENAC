@@ -13,9 +13,10 @@
   <script src="jsGeral/js1/init-alpine.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" defer></script>
-  <link rel="shortcut icon" href="img/Logo_QR/logoroxa.png" type="image/x-icon">
+  <link rel="shortcut icon" href="img/Logo_QR/favIconPreto.png" type="image/x-icon">
 
   <!-- arquivos -->
+  <link rel="stylesheet" href="cssgeral/css1/qrCode.css">
   <link rel="stylesheet" href="cssGeral/css1/estilo.css">
   <link rel="stylesheet" href="cssGeral/css1/adm/adm.css">
   <link rel="stylesheet" href="cssGeral/css1/adm/button.css">
@@ -24,6 +25,7 @@
   <link rel="stylesheet" href="cssGeral/css1/popup/poupup.css">
   <script src="jsGeral/js1/app.js" defer></script>
   <script src="jsGeral/js1/arquivos.js" defer></script>
+  <script src="jsgeral/js1/geradorQRCODE.js" defer></script>
   <!-- arquivos -->
 
   <link rel="stylesheet" href="cssGeral/css1/popup/poupup.css">
@@ -435,18 +437,31 @@
                 <div class="flex items-center">
                   <span class="inline-block w-3 h-3 mr-1 bg-purple-600 rounded-full"></span>
                   <span>Presente</span>
-                </div>
+                </div><!--  -->
               </div>
             </div>
             <div class="min-w-0 p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800">
               <h4 class="mb-4 font-semibold text-gray-800 dark:text-gray-300" id="atividades">
                 QR CODE
               </h4>
-              <div class="flex justify-center mt-4 space-x-3 text-sm text-gray-600 dark:text-gray-400">
+              <div class="flex justify-center mt-4 spce-x-3 text-sm text-gray-600 dark:text-gray-400">
                 <div class="flex items-center">
                   <div class="wrapper">
                     <div class="flex items-center" id="aqui">
-                      <img src="img/svg/QRCode_Fácil.svg" width="50%">
+                      <div class="wrapper">
+                        <div class="header-form">
+                          <div class="header">
+                            <h1 class="mb-4 font-semibold text-gray-800 dark:text-gray-300">Gerador de QRCode</h1>
+                          </div>
+                          <div class="form">
+                            <input type="text" placeholder="Digite aqui o seu ID" name="" id="inputValue">
+                            <button id="btnValue">Gerar QRcode</button>
+                          </div>
+                        </div>
+                        <div class="qr-code">
+                          <img src="" id="imgQrCode" alt="">
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
